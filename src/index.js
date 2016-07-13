@@ -17,7 +17,7 @@ var randomLastName = uniqueRandomArray(lastNames);
 
 //available methods
 module.exports = {
-    all: function () {
+    list: function () {
         var allNames;
         for (var i = 0; i < firstNames.length; i++) {
             //Math.floor((Math.random() * 10) + 1);
@@ -25,17 +25,8 @@ module.exports = {
         }
         return allNames;
     },
-    random: function () {
+    single: function () {
         return randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
 
-    },
-    tester: function(){
-        return 'this is a function'
     }
 };
-
-
-//console.log('module.exports.all()', module.exports.all());
-
-
-//console.log('module.exports.random', module.exports.random);
