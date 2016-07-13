@@ -1,0 +1,27 @@
+{
+  "name": "random-character-name",
+  "version": "1.0.0",
+  "description": "It will generate random names for stories",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmichelin/characternamegenerator.git"
+  },
+  "keywords": [
+    "random",
+    "name",
+    "generator"
+  ],
+  "author": "John Michelin <john@javascriptjohn.com> (http://www.javascriptjohn.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmichelin/characternamegenerator/issues"
+  },
+  "homepage": "https://github.com/jmichelin/characternamegenerator#readme",
+  "dependencies": {
+    "unique-random-array": "1.0.0"
+  }
+}
