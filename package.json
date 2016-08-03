@@ -1,6 +1,6 @@
 {
   "name": "random-character-name",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "It will generate random names for stories",
   "main": "src/index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/jmichelin/characternamegenerator#readme",
   "dependencies": {
+    "lodash": "4.14.1",
     "unique-random-array": "1.0.0"
   }
 }

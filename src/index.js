@@ -3,6 +3,7 @@
  */
 //require external dependencies
 var uniqueRandomArray = require('unique-random-array');
+var _ = require('lodash');
 
 //define available data
 var firstNames = require('./first-names.json');
@@ -14,6 +15,12 @@ var randomFirstName = uniqueRandomArray(firstNames);
 var randomMiddleName = uniqueRandomArray(middleNames);
 var randomLastName = uniqueRandomArray(lastNames);
 
+//filter functions
+var filteredNames = function (nameList, initial) {
+    return nameList.filter(function(name){
+        return name[0] === initial;
+    })
+};
 
 //available methods
 module.exports = {
@@ -28,5 +35,11 @@ module.exports = {
     single: function () {
         return randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
 
+    },
+    startsWithLetter: function (f,m,l) {
+        var firstName = _.sample(filteredNames(firstNames, f));
+        var middleName = _.sample(filteredNames(middleNames, m));
+        var lastName = _.sample(filteredNames(lastNames, l));
+        return firstName + ' ' + middleName + ' ' + lastName;
     }
 };

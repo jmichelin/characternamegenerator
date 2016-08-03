@@ -1,3 +1,5 @@
 node_modules
 .idea/
 dataTest.js
+/src/hax.html
+/src/hax.js
