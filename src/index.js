@@ -25,10 +25,11 @@ var filteredNames = function (nameList, initial) {
 //available methods
 module.exports = {
     list: function () {
-        var allNames;
+        var allNames = ["FirstName MiddleName LastName"];
         for (var i = 0; i < firstNames.length; i++) {
             //Math.floor((Math.random() * 10) + 1);
-            allNames = allNames + randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName() + "\n";
+            var tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName() + "\n";
+            allNames.push(tmpName);
         }
         return allNames;
     },
