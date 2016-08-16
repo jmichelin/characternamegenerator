@@ -42,5 +42,14 @@ module.exports = {
         var middleName = _.sample(filteredNames(middleNames, m));
         var lastName = _.sample(filteredNames(lastNames, l));
         return firstName + ' ' + middleName + ' ' + lastName;
+    },
+    numberOfNames: function (number) {
+        var allNames = [];
+        for (var i = 0; i < number; i++) {
+            //Math.floor((Math.random() * 10) + 1);
+            var tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName() + "\n";
+            allNames.push(tmpName);
+        }
+        return allNames;
     }
 };
