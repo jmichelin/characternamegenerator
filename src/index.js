@@ -44,6 +44,7 @@ module.exports = {
         return firstName + ' ' + middleName + ' ' + lastName;
     },
     numberOfNames: function (number) {
+        if(number === undefined) { number = 1; };
         var allNames = [];
         for (var i = 0; i < number; i++) {
             //Math.floor((Math.random() * 10) + 1);

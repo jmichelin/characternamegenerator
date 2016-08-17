@@ -3,3 +3,4 @@ node_modules
 dataTest.js
 /src/hax.html
 /src/hax.js
+coverage

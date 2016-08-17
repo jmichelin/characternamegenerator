@@ -58,12 +58,17 @@ describe('tests should be running', function () {
         })
     });
 
-    describe('numberOfNames(3)', function () {
-        it('should have a length of three', function () {
+    describe('numberOfNames()', function () {
+        it('numberOfNames(3) should have a length of three', function () {
             var arrayOfNames =  randomNameGenerator.numberOfNames(3);
             expect(arrayOfNames).to.have.lengthOf(3);
 
-        })
+        });
+
+        it('numberOfNames() should default to one', function () {
+            var arrayOfOneName = randomNameGenerator.numberOfNames();
+            expect(arrayOfOneName).to.have.lengthOf(1);
+        });
     });
 
 });
