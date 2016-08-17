@@ -58,7 +58,7 @@ describe('tests should be running', function () {
         })
     });
 
-    describe('numberOfNames()', function () {
+    describe('numberOfNames(3)', function () {
         it('should have a length of three', function () {
             var arrayOfNames =  randomNameGenerator.numberOfNames(3);
             expect(arrayOfNames).to.have.lengthOf(3);

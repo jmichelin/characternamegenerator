@@ -28,7 +28,7 @@ module.exports = {
         var allNames = ["FirstName MiddleName LastName"];
         for (var i = 0; i < firstNames.length; i++) {
             //Math.floor((Math.random() * 10) + 1);
-            var tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName() + "\n";
+            var tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
             allNames.push(tmpName);
         }
         return allNames;
@@ -47,7 +47,7 @@ module.exports = {
         var allNames = [];
         for (var i = 0; i < number; i++) {
             //Math.floor((Math.random() * 10) + 1);
-            var tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName() + "\n";
+            var tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
             allNames.push(tmpName);
         }
         return allNames;
