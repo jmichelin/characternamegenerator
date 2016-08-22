@@ -1,4 +1,10 @@
 # Story Name Generator 
+[![Travis](https://img.shields.io/travis/jmichelin/characternamegenerator.svg?style=flat)](https://travis-ci.org/jmichelin/characternamegenerator)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/jmichelin/characternamegenerator.svg?style=flat)](https://codecov.io/gh/jmichelin/characternamegenerator)
+[![NPM Version](https://img.shields.io/npm/v/random-character-name.svg?style=flat)](https://github.com/jmichelin/characternamegenerator)
+[![NPM Downloads](https://img.shields.io/npm/dm/random-character-name.svg?style=flat)](https://www.npmjs.com/package/random-character-name)
+[![License](https://img.shields.io/npm/l/random-character-name.svg?style=flat)](http://spdx.org/licenses/MIT)
+
 
 ###Methods
 The method list() will return a list of all random names that were generated.
