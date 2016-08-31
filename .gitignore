@@ -4,3 +4,7 @@ dataTest.js
 /src/hax.html
 /src/hax.js
 coverage
+npm-debug.log
+random-character-name-0.0.0-semantically-released.0.tgz
+dist
+.nyc_output

@@ -1,8 +1,10 @@
 /**
  * Created by jmichelin on 8/3/16.
  */
-var expect = require('chai').expect;
-var randomNameGenerator = require('./index');
+// var expect = require('chai').expect;
+// var randomNameGenerator = require('./index');
+import {expect} from 'chai';
+import randomNameGenerator from './index'
 
 /*
 Current Access Points
