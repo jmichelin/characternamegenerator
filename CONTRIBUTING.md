@@ -7,8 +7,8 @@ To contribute to the project, please follow these steps:
 3. Make a branch for your change
 4. Run `npm install`
 5. Run `npm start`
-6. Make your changes
-7. Test your changes (we have a githook that disallows anything less than 100% code coverage)
+6. Make your changes and add tests for your changes. 
+7. Test your changes (use `npm test` we have a githook that disallows anything less than 100% code coverage)
 8. Run `git add -A` to add your changes (please don't add any changes to the `dist` directory).
 9. Run `npm run commit` (**Do not** use `git commit`) - follow the prompts to create your git message
 10. Push your changes with `git push`
