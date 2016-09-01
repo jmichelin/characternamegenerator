@@ -30,14 +30,14 @@ module.exports = {
 }
 
 //available methods
-function list() {
-    var allNames = ["FirstName MiddleName LastName"];
-    for (var i = 0; i < firstNames.length; i++) {
-        //Math.floor((Math.random() * 10) + 1);
+function list(number) {
+    number = number || firstNames.length;
+    var listOfNames = ["FirstName MiddleName LastName"];
+    for (var i = 0; i < number; i++) {
         var tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
-        allNames.push(tmpName);
+        listOfNames.push(tmpName);
     }
-    return allNames;
+    return listOfNames;
 }
 
 function single() {
@@ -53,14 +53,11 @@ function startsWithLetter(f, m, l) {
 }
 
 function numberOfNames(number) {
-    if (number === undefined) {
-        number = 1;
-    }
-    var allNames = [];
+    number = number || 1;
+    var listOfNames = [];
     for (var i = 0; i < number; i++) {
-        //Math.floor((Math.random() * 10) + 1);
         var tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
-        allNames.push(tmpName);
+        listOfNames.push(tmpName);
     }
-    return allNames;
+    return listOfNames;
 }
