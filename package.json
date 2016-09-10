@@ -1,6 +1,6 @@
 {
   "name": "random-character-name",
-  "version": "1.6.0",
+  "version": "0.0.0-semantically-released",
   "description": "It will generate random names for stories",
   "main": "dist/index.js",
   "scripts": {

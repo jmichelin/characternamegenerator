@@ -6,16 +6,9 @@
 import {expect} from 'chai';
 import randomNameGenerator from './index'
 
-/*
-Current Access Points
-
-list() creates a random list of names
-single() generates a single random name
-startsWithLetter(f,m,l)
- */
 
 describe('tests should be running', function () {
-    describe('all()', function () {
+    describe('list()', function () {
         it('should be an array of strings', function () {
             expect(randomNameGenerator.list()).to.satisfy(isArrayOfStrings);
 

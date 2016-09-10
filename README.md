@@ -4,6 +4,7 @@
 [![NPM Version](https://img.shields.io/npm/v/random-character-name.svg?style=flat)](https://github.com/jmichelin/characternamegenerator)
 [![NPM Downloads](https://img.shields.io/npm/dm/random-character-name.svg?style=flat)](https://www.npmjs.com/package/random-character-name)
 [![License](https://img.shields.io/npm/l/random-character-name.svg?style=flat)](http://spdx.org/licenses/MIT)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ###Methods
 The method list() will return a list of all random names that were generated.
