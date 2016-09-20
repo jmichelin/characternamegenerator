@@ -62,12 +62,12 @@
     "semantic-release": "^4.3.5",
     "webpack": "1.13.2"
   },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
-  },
   "config": {
     "ghooks": {
       "pre-commit": "npm run cover && npm run check-coverage"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
     }
   },
   "babel": {
