@@ -50,7 +50,43 @@ describe('tests should be running', function () {
             expect(arrayOfName[0][0]).to.equal('A');
             expect(arrayOfName[1][0]).to.equal('C');
             expect(arrayOfName[2][0]).to.equal('E');
-        })
+        });
+
+        it('should return only a first name if undefined passed in for m and l', function() {
+            "use strict";
+            var arrayOfName = randomNameGenerator.startsWithLetter('A', undefined, undefined).split(' ');
+            expect(arrayOfName).to.have.lengthOf(1);
+        });
+
+        it('should only return a first name starting with A', function() {
+            "use strict";
+            var arrayOfName = randomNameGenerator.startsWithLetter('A', undefined, undefined).split(' ');
+            expect(arrayOfName[0][0]).to.equal('A');
+        });
+
+        it('should return only a middle name if undefined passed in for f and l', function() {
+            "use strict";
+            var arrayOfName = randomNameGenerator.startsWithLetter(undefined, 'M', undefined).split(' ');
+            expect(arrayOfName).to.have.lengthOf(1);
+        });
+
+        it('should return only a middle name starting with M', function() {
+            "use strict";
+            var arrayOfName = randomNameGenerator.startsWithLetter(undefined, 'M', undefined).split(' ');
+            expect(arrayOfName[0][0]).to.equal('M');
+        });
+
+        it('should return only a last name if undefined passed in for f and m', function() {
+            "use strict";
+            var arrayOfName = randomNameGenerator.startsWithLetter(undefined, undefined, 'L').split(' ');
+            expect(arrayOfName).to.have.lengthOf(1);
+        });
+
+        it('should return only a middle name starting with M', function() {
+            "use strict";
+            var arrayOfName = randomNameGenerator.startsWithLetter(undefined, undefined, 'L').split(' ');
+            expect(arrayOfName[0][0]).to.equal('L');
+        });
     });
 
     describe('numberOfNames()', function () {

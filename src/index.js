@@ -39,10 +39,11 @@ const single = ()=>{
 };
 
 const startsWithLetter = (f, m, l)=>{
-    let firstName = _.sample(filteredNames(firstNames, f));
-    let middleName = _.sample(filteredNames(middleNames, m));
-    let lastName = _.sample(filteredNames(lastNames, l));
-    return firstName + ' ' + middleName + ' ' + lastName;
+    let firstName = f === undefined ? '' : _.sample(filteredNames(firstNames, f));
+    let middleName = m === undefined ? '' : _.sample(filteredNames(middleNames, m));
+    let lastName = l === undefined ? '' : _.sample(filteredNames(lastNames, l));
+    let chosenName = firstName + ' ' + middleName + ' ' + lastName
+    return chosenName.trim();
 }
 
 const numberOfNames = (number=1)=>{
