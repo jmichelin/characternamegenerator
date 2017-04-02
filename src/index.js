@@ -1,10 +1,9 @@
 /**
  * Created by jmichelin on 7/13/16.
  */
-'use strict'
 //require external dependencies
 import uniqueRandomArray from 'unique-random-array';
-import _ from 'lodash';
+import sample from 'lodash/sample';
 
 //define available data
 import firstNames from '../data/first-names.json';
@@ -12,53 +11,56 @@ import middleNames from '../data/middle-names.json';
 import lastNames from '../data/last-names.json';
 
 //random generators
-let randomFirstName = uniqueRandomArray(firstNames);
-let randomMiddleName = uniqueRandomArray(middleNames);
-let randomLastName = uniqueRandomArray(lastNames);
+const randomFirstName = uniqueRandomArray(firstNames);
+const randomMiddleName = uniqueRandomArray(middleNames);
+const randomLastName = uniqueRandomArray(lastNames);
 
 //filter functions
-const filteredNames =  (nameList, initial)=>{
-    return nameList.filter((name)=>{
-        return name[0] === initial;
-    })
+function filteredNames(nameList, initial) {
+    return nameList.filter(name => name[0] === initial)
 };
 
 //methods
-const list = ()=>{
-    let allNames = ["FirstName MiddleName LastName"];
-    for (let i = 0; i < firstNames.length; i++) {
-        let tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
+export function list() {
+    const allNames = ["FirstName MiddleName LastName"];
+    let tmpName;
+
+    for (let i = 0, length = firstNames.length; i < length; ++i) {
+        tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
         allNames.push(tmpName);
     }
+    
     return allNames;
 };
 
-
-const single = ()=>{
+export function single() {
     return randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
 };
 
-const startsWithLetter = (f, m, l)=>{
-    let firstName = f === undefined ? '' : _.sample(filteredNames(firstNames, f));
-    let middleName = m === undefined ? '' : _.sample(filteredNames(middleNames, m));
-    let lastName = l === undefined ? '' : _.sample(filteredNames(lastNames, l));
-    let chosenName = firstName + ' ' + middleName + ' ' + lastName
-    return chosenName.trim();
-}
+export function startsWithLetter(f = '', m = '', l = '') {
+    const firstName = f && sample(filteredNames(firstNames, f));
+    const middleName = m && sample(filteredNames(middleNames, m));
+    const lastName = l && sample(filteredNames(lastNames, l));
+    const chosenName = firstName + ' ' + middleName + ' ' + lastName;
 
-const numberOfNames = (number=1)=>{
-    let allNames=[];
-    for (let i = 0; i < number; i++) {
-        let tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
+    return chosenName.trim();
+};
+
+export function numberOfNames(number = 1) {
+    const allNames=[];
+    let tmpName;
+
+    for (let i = 0; i < number; ++i) {
+        tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
         allNames.push(tmpName);
     }
+    
     return allNames;
-}
+};
 
-//available methods
-module.exports = {
-    list: list,
-    single: single,
-    startsWithLetter: startsWithLetter,
-    numberOfNames: numberOfNames
-}
+export default {
+    list,
+    single,
+    startsWithLetter,
+    numberOfNames,
+};

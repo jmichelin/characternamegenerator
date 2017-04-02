@@ -1,5 +1,5 @@
 {
-  "name": "random-character-name",
+  "name": "characternamegenerator",
   "version": "0.0.0-semantically-released",
   "description": "It will generate random names for stories",
   "main": "dist/index.js",
@@ -11,6 +11,7 @@
     "test": "mocha src/index.test.js --compilers js:babel-register",
     "cover": "nyc npm t",
     "prebuild": "rimraf dist",
+    "precommit": "npm run cover && npm run check-coverage",
     "build": "npm-run-all --parallel build:*",
     "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
     "build:umd": "webpack --output-filename index.umd.js",
@@ -39,40 +40,50 @@
   },
   "homepage": "https://github.com/jmichelin/characternamegenerator#readme",
   "dependencies": {
-    "lodash": "4.14.1",
-    "unique-random-array": "1.0.0"
+    "lodash": "^4.14.0",
+    "unique-random-array": "^1.0.0"
   },
   "devDependencies": {
-    "babel-cli": "6.11.4",
-    "babel-loader": "6.2.5",
-    "babel-preset-es2015": "6.13.2",
-    "babel-preset-stage-2": "6.13.0",
-    "babel-register": "6.11.6",
-    "chai": "3.5.0",
-    "codecov.io": "0.1.6",
-    "commitizen": "2.8.5",
-    "cz-conventional-changelog": "1.1.7",
-    "ghooks": "1.3.2",
-    "istanbul": "0.4.4",
-    "json-loader": "0.5.4",
-    "mocha": "3.0.0",
-    "npm-run-all": "3.0.0",
-    "nyc": "8.1.0",
-    "rimraf": "2.5.4",
-    "semantic-release": "^4.3.5",
-    "webpack": "1.13.2"
+    "babel-cli": "^6.11.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.2.0",
+    "babel-preset-env": "^1.3.0",
+    "babel-preset-stage-2": "^6.13.0",
+    "babel-register": "^6.11.0",
+    "chai": "^3.5.0",
+    "codecov.io": "^0.1.0",
+    "commitizen": "^2.8.0",
+    "cz-conventional-changelog": "^1.1.0",
+    "esdoc": "^0.5.0",
+    "husky": "^0.13.0",
+    "istanbul": "^0.4.0",
+    "json-loader": "^0.5.0",
+    "mocha": "^3.0.0",
+    "npm-run-all": "^3.0.0",
+    "nyc": "^8.1.0",
+    "rimraf": "^2.5.0",
+    "semantic-release": "^6.0.0",
+    "webpack": "^1.0.0"
   },
   "config": {
-    "ghooks": {
-      "pre-commit": "npm run cover && npm run check-coverage"
-    },
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
   },
   "babel": {
     "presets": [
-      "es2015",
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions"
+            ]
+          },
+          "loose": true,
+          "modules": "umd"
+        }
+      ],
       "stage-2"
     ]
   }
