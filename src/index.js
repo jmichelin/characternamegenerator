@@ -16,9 +16,7 @@ const randomMiddleName = uniqueRandomArray(middleNames);
 const randomLastName = uniqueRandomArray(lastNames);
 
 //filter functions
-function filteredNames(nameList, initial) {
-    return nameList.filter(name => name[0] === initial)
-};
+const filteredNames = (nameList, initial) => nameList.filter(name => name[0] === initial);
 
 //methods
 export function list() {
