@@ -1,7 +1,7 @@
 /**
  * Created by jmichelin on 8/31/16.
  */
-import {join} from 'path'
+import { join } from 'path'
 
 const include = join(__dirname, 'src')
 
@@ -15,8 +15,8 @@ export default {
     devtool: 'source-map',
     module: {
         loaders: [
-            {test: /\.js$/, loader: 'babel', include},
-            {test: /\.json$/, 'loader': 'json', include}
+            { test: /\.js$/, loader: 'babel', include },
+            { test: /\.json$/, 'loader': 'json', include }
         ]
     }
 }
