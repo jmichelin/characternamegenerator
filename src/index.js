@@ -19,20 +19,12 @@ const randomLastName = uniqueRandomArray(lastNames);
 const filteredNames = (nameList, initial) => nameList.filter(name => name[0] === initial);
 
 //methods
-export function list() {
-    const allNames = ["FirstName MiddleName LastName"];
-    let tmpName;
-
-    for (let i = 0, length = firstNames.length; i < length; ++i) {
-        tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
-        allNames.push(tmpName);
-    }
-    
-    return allNames;
+export function single() {
+    return `${randomFirstName()} ${randomMiddleName()} ${randomLastName()}`;
 };
 
-export function single() {
-    return randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
+export function list() {
+    return ["FirstName MiddleName LastName", ...firstNames.map($ => single())];
 };
 
 export function startsWithLetter(f = '', m = '', l = '') {
@@ -44,16 +36,8 @@ export function startsWithLetter(f = '', m = '', l = '') {
     return chosenName.trim();
 };
 
-export function numberOfNames(number = 1) {
-    const allNames=[];
-    let tmpName;
-
-    for (let i = 0; i < number; ++i) {
-        tmpName = randomFirstName() + ' ' + randomMiddleName() + ' ' + randomLastName();
-        allNames.push(tmpName);
-    }
-    
-    return allNames;
+export function numberOfNames(number = 1) {    
+    return Array(number).fill(false).map($ => single());
 };
 
 export default {
