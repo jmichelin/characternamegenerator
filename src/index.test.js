@@ -82,6 +82,31 @@ describe('tests should be running', function () {
             var arrayOfName = startsWithLetter(undefined, undefined, 'L').split(' ');
             expect(arrayOfName[0][0]).to.equal('L');
         });
+
+        it('should handle lowercase letters', function() {
+            "use strict";
+            var arrayOfName = startsWithLetter('a', 'b', 'c').split(' ');
+            expect(arrayOfName.length).to.equal(3);
+        });
+
+        it('should handle lowercase letters', function() {
+            "use strict";
+            var arrayOfName = startsWithLetter('a', 'b', 'c').split(' ');
+            expect(arrayOfName.length).to.equal(3);
+        });
+
+        it('should not return undefined for non-letters', function() {
+            "use strict";
+            var arrayOfName = startsWithLetter(NaN, 1, 'c').split(' ');
+            expect(arrayOfName.length).to.equal(1);
+        });
+
+        it('should return an empty string when passed no valid letters', function() {
+            "use strict";
+            var name = startsWithLetter(NaN, 1, 4);
+            expect(name).to.equal('');
+        });
+
     });
 
     describe('numberOfNames()', function () {
