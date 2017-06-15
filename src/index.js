@@ -28,11 +28,10 @@ export function list() {
 };
 
 export function startsWithLetter(f = '', m = '', l = '') {
-    const firstName = f && sample(filteredNames(firstNames, f));
-    const middleName = m && sample(filteredNames(middleNames, m));
-    const lastName = l && sample(filteredNames(lastNames, l));
-    const chosenName = firstName + ' ' + middleName + ' ' + lastName;
-
+    const firstName = (/^[a-zA-Z]{1}$/).test(f) && sample(filteredNames(firstNames, f.toUpperCase()));
+    const middleName = (/^[a-zA-Z]{1}$/).test(m) && sample(filteredNames(middleNames, m.toUpperCase()));
+    const lastName = (/^[a-zA-Z]{1}$/).test(l) && sample(filteredNames(lastNames, l.toUpperCase()));
+    const chosenName = `${firstName || ''} ${middleName || ''} ${lastName || ''}`;
     return chosenName.trim();
 };
 
