@@ -1,4 +1,4 @@
-# Story Name Generator
+# Story Character Name Generator
 
 [![Travis](https://img.shields.io/travis/jmichelin/characternamegenerator.svg?style=flat)](https://travis-ci.org/jmichelin/characternamegenerator)
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/jmichelin/characternamegenerator.svg?style=flat)](https://codecov.io/gh/jmichelin/characternamegenerator)
