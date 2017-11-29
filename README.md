@@ -7,6 +7,9 @@
 [![License](https://img.shields.io/npm/l/random-character-name.svg?style=flat)](http://spdx.org/licenses/MIT)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
+### How to install
+`$ npm install random-character-name`
+
 ### Methods
 
 *   `list()` will return a list of all random names that were generated.
